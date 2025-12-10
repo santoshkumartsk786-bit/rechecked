@@ -168,16 +168,16 @@ class EvidenceExtractor:
 def load_models():
     """Load trained models"""
     try:
-        with open('preprocessor.pkl', 'rb') as f:
+        with open('preprocessor(3).pkl', 'rb') as f:
             preprocessor = pickle.load(f)
         
-        with open('sentiment_lr.pkl', 'rb') as f:
+        with open('sentiment_lr(3).pkl', 'rb') as f:
             lr_data = pickle.load(f)
             lr_model = lr_data['model']
             tfidf = lr_data['tfidf']
             label_encoder = lr_data['label_encoder']
         
-        with open('sample_reviews.json', 'r') as f:
+        with open('sample_reviews(3).json', 'r') as f:
             sample_reviews = json.load(f)
         
         return preprocessor, lr_model, tfidf, label_encoder.classes_, sample_reviews
